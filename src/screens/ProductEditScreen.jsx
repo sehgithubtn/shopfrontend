@@ -8,6 +8,7 @@ import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import {listProductDetails, updateProduct} from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
+import { PROXY } from '../constants/proxyConstant'
 
 const ProductEditScreen = () => {
 
@@ -78,7 +79,7 @@ const ProductEditScreen = () => {
             },
           }
     
-          const { data } = await axios.post('/api/upload', formData, config)
+          const { data } = await axios.post(`${PROXY}/api/upload`, formData, config)
     
           setImage(data)
           setUploading(false)

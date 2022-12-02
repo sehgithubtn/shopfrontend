@@ -2,6 +2,8 @@ import {ORDER_CREATE_FAIL,ORDER_CREATE_REQUEST,ORDER_CREATE_SUCCESS, ORDER_DELIV
 import axios from 'axios'
 import {logout} from '../actions/userActions'
 import { CART_CLEAR_ITEMS } from '../constants/cartConstants'
+import {PROXY} from '../constants/proxyConstant'
+
 
 export const createOrder = (order) => async (dispatch,getState) => {
     try {
@@ -19,7 +21,7 @@ export const createOrder = (order) => async (dispatch,getState) => {
             }
         }
 
-        const {data} = await axios.post(`/api/orders`,order,config)
+        const {data} = await axios.post(`${PROXY}/api/orders`,order,config)
 
         dispatch({
             type: ORDER_CREATE_SUCCESS,
@@ -64,7 +66,7 @@ export const getOrderDetails = (id) => async (dispatch,getState) => {
                 Authorization: `Bearer ${userInfo.token}`,
             }
         }
-        const {data} = await axios.get(`/api/orders/${id}` ,config )
+        const {data} = await axios.get(`${PROXY}/api/orders/${id}` ,config )
 
         dispatch({
             type: ORDER_DETAILS_SUCCESS,
@@ -111,7 +113,7 @@ export const payOrder = (orderId, paymentResult) => async (
     }
 
     const { data } = await axios.put(
-      `/api/orders/${orderId}/pay`,
+      `${PROXY}/api/orders/${orderId}/pay`,
       paymentResult,
       config
     )
@@ -158,7 +160,7 @@ export const deliverOrder = (order) => async (
     }
 
     const { data } = await axios.put(
-      `/api/orders/${order._id}/deliver`,
+      `${PROXY}/api/orders/${order._id}/deliver`,
       {},
       config
     )
@@ -204,7 +206,7 @@ export const listMyOrders = (pageNumber = '') => async (
     }
 
     const { data } = await axios.get(
-      `/api/orders/myorders?pageNumber=${pageNumber}`,
+      `${PROXY}/api/orders/myorders?pageNumber=${pageNumber}`,
       config
     )
 
@@ -253,7 +255,7 @@ export const listOrders = (pageNumber = '') => async (
     }
 
     const { data } = await axios.get(
-      `/api/orders?pageNumber=${pageNumber}`,
+      `${PROXY}/api/orders?pageNumber=${pageNumber}`,
       config
     )
 

@@ -1,0 +1,1 @@
+export const PROXY = 'https://nouhadcosmetics-api.onrender.com'
