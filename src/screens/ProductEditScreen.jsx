@@ -9,6 +9,9 @@ import FormContainer from '../components/FormContainer'
 import {listProductDetails, updateProduct} from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
 import { PROXY } from '../constants/proxyConstant'
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import app from "../firebase";
+
 
 const ProductEditScreen = () => {
 
