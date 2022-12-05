@@ -7,7 +7,7 @@ import App from './App';
 import { HashRouter  } from "react-router-dom";
 import {disableReactDevTools} from '@fvilers/disable-react-devtools'
 
-if(process.env.Node_ENV === 'production'){
+if(process.env.NODE_ENV === 'production'){
   disableReactDevTools()
 }
 
