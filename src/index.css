@@ -75,7 +75,7 @@ main {
   }
 
   @media (max-width: 375px) {
-    header nav .container #basic-navbar-nav {
+    .d-flex  {
       margin-top: 10px;
     }
   }
