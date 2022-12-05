@@ -74,8 +74,4 @@ main {
     width: 35.39px;
   }
 
-  @media (max-width: 376px) {
-    form.d-flex  {
-      margin-top: 10px;
-    }
-  }
+  
