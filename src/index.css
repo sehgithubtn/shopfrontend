@@ -74,3 +74,8 @@ main {
     width: 35.39px;
   }
 
+  @media (max-width: 375px) {
+    #basic-navbar-nav .d-flex {
+      margin-top: 10px;
+    }
+  }
