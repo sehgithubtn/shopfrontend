@@ -48,6 +48,7 @@ const App = () => {
                   <Route path='/admin/productlist' element={<ProductListScreen/>}  />
                   <Route path='/admin/productlist/:pageNumber' element={<ProductListScreen/>}  />
                   <Route path='/admin/product/:id/edit' element={<ProductEditScreen/>}  />
+                  <Route path="*" element={<PageNotFound />} />
               </Routes>
          </Container>
         </main>
@@ -59,3 +60,12 @@ const App = () => {
 }
 
 export default App;
+
+
+function PageNotFound() {
+  return (
+    <div>
+      <h2>404 Page not found</h2>
+    </div>
+  );
+}
